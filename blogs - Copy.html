@@ -1,0 +1,586 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIVERSITY</title>
+    <link rel="stylesheet" href="style/bootstrap.min.css">
+    <link rel="stylesheet" href="style/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <style>
+      body{
+        margin: 0;
+        padding: 0;
+      }
+      .container{
+        padding: 0;
+        margin: 0;
+      }
+     
+      .home{
+        background-image: url(harvard-university-cambridge-usa_1268-14363.avif);
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-blend-mode: overlay;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.4);
+        width: 100%;
+        height: 100vh;
+      }
+      
+      
+      .navbar a img{
+        margin-left: 50px;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        transition: 1s;
+
+      }
+      .navbar a img:hover{
+        transform: rotate(360deg);
+      }
+      .collapse{
+        direction: rtl;
+      }
+      .navbar-nav a{
+        color: white;
+      }
+     
+      .navbar-nav a::after{
+        content: "";
+        width: 0%;
+        height: 2px;
+        margin: auto;
+        display: block;
+        background-color: rgb(0, 106, 255);
+        color: white;
+      }
+       .navbar-nav a:hover::after{
+        width: 100%;
+        transition:0.7s;
+        color: white;
+
+      }
+      .home .contant{
+        text-align: center;
+        margin-top: 100px;
+        color: white;
+        
+      }
+      .home .btn{
+        border-top: none;
+        border-left: none;
+        border-right: none;
+      }
+      .home h1{
+        font-size: 60px;
+        margin-bottom: 50px;
+      }
+       .collapse .fa-xmark{
+        display: none;
+      }
+      @media(max-width:700px){
+        .text h1{
+          font-size: 25px;
+        }
+        .collapse{
+          width: 200px;
+          height: 100vh;
+          display: block;
+          position: absolute;
+          background: rgb(0, 106, 255);
+          top: 0;
+          right: 0;
+          z-index: 2;
+          text-align: left;
+          transition: 1s;
+        }
+        .collapse ul li{
+          display: block;
+          top: 10px;
+          left: 10px;
+        }
+        .collapse .fa-xmark{
+          display: block;
+          color: white;
+          margin-right: 170px;
+          margin-top: 10px;
+          font-size: 22px;
+        }
+        
+      }
+      .courses .container{
+        text-align: center;
+        margin-left: 60px;
+      }
+      .courses .title{
+        margin-top: 70px;
+      }
+      .row{
+        padding: 70px 100px;
+        margin-left: 20px;
+      }
+      .title h1,p{
+        font-weight: 200;
+        
+      }
+      .card{
+        background-color: rgb(167,221,247);
+        border-radius: 20px;
+        transition: 0.5s;
+      }
+      .card:hover{
+        box-shadow: 0 0 20px 0 rgb(0, 106, 255);
+      }
+      @media(max-width:700px){
+        .row{
+          flex-direction: column;
+        }
+      }
+      .text{
+        margin-bottom: 40px;
+        margin-top: 30px;
+      }
+       .col {
+        flex-basis: 31%;
+        border-radius: 20px;
+        overflow: hidden;
+        position: relative;
+        bottom: 30px;
+      }
+      .col img{
+        border-radius: 20px;
+        overflow: hidden;
+      }
+      .card-img-mid{
+        height: 400px;
+        width: 300px;
+      }
+      .heading{
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: 0.7s;
+      }
+      .heading h3{
+        position: absolute;
+        bottom: 0;
+        left: 35%;
+        font-size: 25px;
+        font-weight: 500;
+        color: white;
+        opacity: 0;
+        transition: 0.7s;
+      }
+      .heading:hover{
+        
+        height: 413px;
+        overflow: hidden;
+      }
+      .heading:hover h3{
+        bottom: 49%;
+        opacity: 1;
+      }
+      .future {
+        text-align: center;
+        align-items: center;
+        margin-top: 5px;
+      }
+      .speak {
+        text-align: center;
+        margin-left: 150px;
+      }
+      .speak h1{
+        font-size: 60px;
+        font-weight: 200;
+      }
+      .speak p{
+        font-size: 20px;
+        color: #777;
+      }
+      .future .row {
+        margin-left: 170px;
+        
+      }
+      .futurediv{
+        flex-basis: 32%;
+        position: relative;
+        bottom: -40px;
+        text-align: center;
+        border-radius: 20px;
+        overflow: hidden;
+      }
+      .futurediv img{
+        width: 100%;
+        min-height: 45vh;
+        border-radius: 20px;
+        
+      }
+      .rate{
+        text-align: center;
+        margin-left: 100px;
+      }
+      .rate h1{
+        font-size: 40px;
+        font-weight: 200;
+      }
+      .rate p {
+        font-size: 20px;
+        color: #777;
+      }
+      .comments .col{
+        display: flex;
+        background: rgba(141, 190, 239, 0.4);
+        border-radius: 20px;
+        padding: 15px;
+        margin-right: 20px;
+        margin-top: 70px;
+      }
+      .comments  img{
+        width: 70px;
+        height: 35px;
+        margin-right: 20px;
+        margin-top: 4px;
+      }
+      .comments .row{
+        margin-left: 80px;
+        padding: 30px;
+      }
+      .comments .fa-star{
+        color: crimson;
+      }
+      .enroll{
+        display: flex;
+        padding: 150px;
+        flex-direction: column;
+        width: 80%;
+        margin: 70px auto;
+        text-align: center;
+        background-image: url(medium-shot-smiley-people-discussing_23-2149039820.avif);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-blend-mode: overlay;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.8);
+       
+      }
+      .enroll h1{
+        color: white;
+        font-size: 35px;
+        font-weight: 700;
+        margin-bottom: 30px;
+        
+      }
+     .enroll a{
+      text-decoration: none;
+      color: white;
+      background-color: black;
+      padding: 10px;
+      border-radius: 10px;
+      border: solid 1px white;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      transition: 0.7s;
+     }
+     .enroll a:hover{
+      background-color: blue;
+      transition: 0.7s;
+     }
+     .footer{
+      text-align: center;
+      padding:  50px 130px;
+     }
+     .footer h4{
+      font-size: 20px;
+      font-weight: 300;
+     }
+     .footer p{
+      color: #777;
+      line-height: 30px;
+     }
+     .social{
+      margin: 50px 0 20px;
+     }
+     .social .fa-brands{
+      margin: 0 20px;
+     }
+     .social .fa-facebook-f{
+      color: rgb(0, 106, 255);
+     }
+     .social .fa-twitter{
+      color: rgb(73, 166, 248);
+     }
+     .social .fa-linkedin-in{
+      color: blue;
+     }
+     .social .fa-youtube{
+      color:red ;
+     }
+     .header-about{
+      width: 100%;
+      min-height: 50vh;
+      background-image: linear-gradient(rgba(4, 9, 30,0.4), rgba(4,9,30,0.4)),url(graduation-concept-with-students-holding-blank-certificate-template_23-2148201847.avif);
+      background-position: center;
+      background-size: cover;
+      position: relative;
+      
+     }
+     .header-about .contant{
+      text-align: center;
+      color: white;
+      margin-top: 50px;
+     }
+     .meeting .container{
+      margin-top: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 90px;
+      margin-right: 20px;
+      
+     }
+     .aboutmeeting{
+      text-align: left;
+      margin-right: 70px;
+
+      
+     }
+     .meeting img{
+      width: 350px;
+      height: 300px;
+     }
+     .blogs{
+      display: flex;
+      padding: 50px 0;
+      /* margin: auto; */
+      justify-content: space-around;
+     }
+     .blog-left{
+      flex-basis: 30%;
+      margin-left: 70px;
+      
+     }
+     .blog-left img{
+      width: 160%;
+     }
+     .blog-left h2{
+      font-size: 18px;
+      font-weight: 700;
+      margin-top: 30px;
+      margin-bottom: 30px;
+     }
+     .blog-left p{
+      font-weight: 400;
+
+     }
+     .blogs .blog{
+      display: flex;
+      justify-content: space-between;
+     }
+     .blog-right{
+      flex-basis: 32%;
+      margin-right: 40px;
+     }
+     .blog-right h3{
+      background-color: rgb(0, 145, 255);
+      color: white;
+      padding: 7px 0;
+      margin-bottom: 15px;
+      text-align: center;
+     }
+     .blog-right div{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+     }
+     .info{
+      border: solid 1px black;
+      padding: 20px;
+      margin-top: 100px;
+     }
+     .info .form-control, textarea{
+      background: #f0f0f0;
+      border: none;
+      
+     }
+     .info .btn{
+      margin-top: 20px;
+     }
+     @media(max-width:1080px){
+      .blogs{
+        display: flex;
+        flex-direction: column;
+      }
+      .blog-right{
+        padding: 20px;
+        font-size: 10px;
+       
+      }
+      .blog-left img{
+        width: 400px;
+        height: 400px;
+
+      }
+     }
+     
+    </style>
+</head>
+<body>
+  
+
+  <section class="header-about">
+    <nav class="navbar   navbar-expand-lg ">
+      <div class="container">
+        <a class="navbar-brand" href="#"><img src="university-background-flat-style_23-2147760414.avif"></a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <i class="fa-solid fa-xmark" onclick="hidemenu()"></i>
+          <ul class="navbar-nav ">
+            <li class="nav-item">
+              <a class="nav-link "  href="contact - Copy.html">CONTACTUS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="blogs - Copy.html">BLOGS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="courses-Copy.html">Courses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="about- Copy.html">About</a>
+            </li>
+            <li class="nav-item">
+           <a class="nav-link " aria-current="page" href="index.html">Home</a>
+            </li>
+          </ul>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+    <div class="contant">
+      <h3>Our Certificate & Online Program For 2024</h3>
+    </div>
+  </section>
+
+
+  <section class="blogs">
+    <div class="blog">
+      <div class="blog-left">
+        <img src="cheerful-happy-graduates-fooling-smiling-making-selfie_176420-14305.jpg">
+        <h2>Our Certificate & Online Programe For 2024</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas est esse numquam alias, voluptatem at excepturi libero tenetur repellendus nulla nesciunt similique, vitaeexercitationem. Soluta, amet officia odio at inventore ipsum quidem laudantium ad? Beatae possimus vitae, commodi blanditiis quaerat tempora est quod esse ducimus, impedit quas voluptates a quos!</p>
+        <br>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit perferendis sint> delectus eum hic sapiente tempora, soluta dolore magnam cumque distinctio, dignissimo quos vitae. Unde dolorum, repellendus asperiores dolorem alias nesciunt porro veniam ducimus, in placeat nihil ex dolore repellat a non aperiam officia rem vel voluptatibus vitae totam minus?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit perferendis sint delectus eum hic sapiente tempora, soluta dolore magnam cumque distinctio, dignissimos quos vitae. Unde dolorum, repellendus asperiores dolorem alias nesciunt porro veniamducimus, in placeat nihil ex dolore repellat a non aperiam officia rem vel voluptatibus vitae totam minus?</p>
+        <br>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit perferendis sint<br> delectus eum hic sapiente tempora, soluta dolore magnam cumque distinctio, dignissimos<br> quos vitae. Unde dolorum, repellendus asperiores dolorem alias nesciunt porro veniam <br>ducimus, in placeat nihil ex dolore repellat a non aperiam officia rem vel voluptatibus vitae<br> totam minus?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit<br> perferendis sint delectus eum hic sapiente tempora, soluta dolore magnam cumque distinctio,<br> dignissimos quos vitae. Unde dolorum, repellendus asperiores dolorem alias nesciunt porro veniam<br> ducimus, in placeat nihil ex dolore repellat a non aperiam officia rem vel voluptatibus vitae totam minus?</p>
+        <br>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis expedita architecto hic <br>beatae, natus recusandae nesciunt labore asperiores, eveniet rerum repellendus reprehenderit<br> cum voluptatem enim. Officiis, quia quibusdam! Veniam, asperiores.</p>
+
+        <div class="info">
+          <h3>Write Your Comment</h3>
+         <form class="input-group mb-3" >
+            <input type="text" class="form-control" placeholder="Enter Your Name"  >
+         </form>
+         <form class="input-group mb-3">
+           <input type="text" class="form-control" placeholder="Enter Your Email" >
+         </form>
+         <textarea cols="50" rows="4"></textarea>
+         <button type="button" class="btn btn-primary">Post COmment</button>
+       </div>
+      </div>
+      
+      <div class="blog-right">
+        <h3>Post Catigories</h3>
+        <div>
+          <span>Web Development</span>
+          <span>21 Course</span>
+        </div>
+        <div>
+          <span>Data Analytics</span>
+          <span>15 Course</span>
+        </div>
+        <div>
+          <span>Python</span>
+          <span>10 Course</span>
+        </div>
+        <div>
+          <span>Algorithm</span>
+          <span>13 Course</span>
+        </div>
+        <div>
+          <span>Android Development</span>
+          <span>17 Course</span>
+        </div>
+        <div>
+          <span>Computer Science</span>
+          <span>30 Course</span>
+        </div>
+        <div>
+          <span>Ios evelopment</span>
+          <span>15 Course</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+ 
+
+
+  <section class="footer">
+    <h4>ABOUT US</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A sit enim quos eaque, quisquam velit nostrum soluta blanditiis perferendis, adipisci provident quam laboriosam cum quibusdam ipsa. Facere ipsam eum itaque.</p>
+    <div class="social">
+      <i class="fa-brands fa-facebook-f" style="margin-right: 30px;"></i>
+      <i class="fa-brands fa-twitter" style="margin-right: 30px;"></i>
+      <i class="fa-brands fa-linkedin-in" style="margin-right: 30px;"></i>
+      <i class="fa-brands fa-youtube" style="margin-right: 30px;"></i>
+  </div>
+    <p>Made By Menna Bahgat <i class="fa-regular fa-heart" style="color: crimson;"></i> Thank You</p>
+  </section>
+
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+   <script>
+      var link = document.getElementById("navbarNav")
+      function hidemenu(){
+        link.style.right = "-200px"
+      }
+   </script>
+
+
+
+
+   
+  
+    <script src="scripts/all.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/bootstrap.bundle.min.js"></script>
+</body>
+</html>
